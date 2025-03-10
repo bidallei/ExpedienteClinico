@@ -1,0 +1,114 @@
+<!-- expediente-clinico.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expediente Clínico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registro del Paciente</h1>
+        <form action="#" method="post">
+            <!-- Campos dinámicos según selección -->
+            <div id="campos-seleccionados">
+                <!-- Aquí se mostrarán los campos seleccionados -->
+            </div>
+            <button type="submit">Guardar Expediente</button>
+        </form>
+    </div>
+
+    <script>
+        // Script para mostrar los campos seleccionados
+        const urlParams = new URLSearchParams(window.location.search);
+        const campos = urlParams.getAll('campo');
+
+        const contenedorCampos = document.getElementById('campos-seleccionados');
+
+        // Función para crear campos dinámicos
+        campos.forEach(campo => {
+            let input;
+            switch (campo) {
+                case 'nombre':
+                    input = '<label>Nombre completo: <input type="text" name="nombre" required></label>';
+                    break;
+                case 'edad':
+                    input = '<label>Edad: <input type="number" name="edad" required></label>';
+                    break;
+                case 'sexo':
+                    input = '<label>Sexo: <select name="sexo"><option value="masculino">Masculino</option><option value="femenino">Femenino</option></select></label>';
+                    break;
+                case 'domicilio':
+                    input = '<label>Domicilio: <input type="text" name="domicilio" required></label>';
+                    break;
+                case 'telefono':
+                    input = '<label>Teléfono: <input type="tel" name="telefono" required></label>';
+                    break;
+                case 'correo':
+                    input = '<label>Correo electrónico: <input type="email" name="correo" required></label>';
+                    break;
+                case 'enfermedades_previas':
+                    input = '<label>Enfermedades previas: <textarea name="enfermedades_previas"></textarea></label>';
+                    break;
+                case 'cirugias':
+                    input = '<label>Cirugías: <textarea name="cirugias"></textarea></label>';
+                    break;
+                case 'alergias':
+                    input = '<label>Alergias: <input type="text" name="alergias"></label>';
+                    break;
+                case 'antecedentes_familiares':
+                    input = '<label>Antecedentes familiares: <textarea name="antecedentes_familiares"></textarea></label>';
+                    break;
+                case 'motivo_consulta':
+                    input = '<label>Motivo de consulta: <textarea name="motivo_consulta" required></textarea></label>';
+                    break;
+                case 'sintomas':
+                    input = '<label>Síntomas: <textarea name="sintomas" required></textarea></label>';
+                    break;
+                case 'exploracion_fisica':
+                    input = '<label>Exploración física: <textarea name="exploracion_fisica" required></textarea></label>';
+                    break;
+                case 'diagnosticos':
+                    input = '<label>Diagnósticos: <textarea name="diagnosticos" required></textarea></label>';
+                    break;
+                case 'laboratorio':
+                    input = '<label>Resultados de laboratorio: <input type="text" name="laboratorio"></label>';
+                    break;
+                case 'radiografias':
+                    input = '<label>Radiografías: <input type="text" name="radiografias"></label>';
+                    break;
+                case 'tomografias':
+                    input = '<label>Tomografías: <input type="text" name="tomografias"></label>';
+                    break;
+                case 'patologia':
+                    input = '<label>Patología: <input type="text" name="patologia"></label>';
+                    break;
+                case 'medicamentos':
+                    input = '<label>Medicamentos recetados: <textarea name="medicamentos"></textarea></label>';
+                    break;
+                case 'procedimientos':
+                    input = '<label>Procedimientos realizados: <textarea name="procedimientos"></textarea></label>';
+                    break;
+                case 'evolucion':
+                    input = '<label>Evolución del paciente: <textarea name="evolucion"></textarea></label>';
+                    break;
+                case 'consentimiento_procedimiento':
+                    input = '<label>Consentimiento para procedimientos: <input type="text" name="consentimiento_procedimiento"></label>';
+                    break;
+                case 'consentimiento_tratamiento':
+                    input = '<label>Consentimiento para tratamientos: <input type="text" name="consentimiento_tratamiento"></label>';
+                    break;
+                case 'pronostico':
+                    input = '<label>Pronóstico: <textarea name="pronostico"></textarea></label>';
+                    break;
+                case 'recomendaciones':
+                    input = '<label>Recomendaciones médicas: <textarea name="recomendaciones"></textarea></label>';
+                    break;
+            }
+            contenedorCampos.innerHTML += input;
+        });
+    </script>
+</body>
+</html>

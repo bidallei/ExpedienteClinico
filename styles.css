@@ -1,0 +1,85 @@
+/* style.css */
+
+/* Paleta Fresca */
+:root {
+    --color-primary: #3498DB;       /* Azul claro */
+    --color-background: #FFFFFF;    /* Blanco */
+    --color-border: #BDC3C7;        /* Gris claro */
+    --color-text: #2C3E50;          /* Gris oscuro */
+    --color-highlight: #E67E22;     /* Naranja */
+    --color-success: #2ECC71;       /* Verde menta */
+    --color-error: #E74C3C;         /* Rojo suave */
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container, .selection-container, .form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--color-primary);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    color: var(--color-text);
+}
+
+input[type="text"], input[type="password"], input[type="number"], select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Estilos para mensajes de éxito y error */
+.success-message {
+    color: var(--color-success);
+}
+
+.error-message {
+    color: var(--color-error);
+}
+
+/* Estilos para el logo */
+.logo {
+    max-width: 100%; /* El logo no será más ancho que su contenedor */
+    height: auto;    /* Mantiene la proporción del logo */
+    max-height: 100px; /* Ajusta la altura máxima del logo */
+    margin-bottom: 20px; /* Espacio entre el logo y el formulario */
+}
