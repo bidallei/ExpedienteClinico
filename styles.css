@@ -1,13 +1,14 @@
 /* style.css */
 
-/* Paleta Médica */
+/* Paleta Fresca */
 :root {
-    --color-primary: #3A7BFF;       /* Azul médium */
-    --color-background: #F8F9FA;    /* Blanco suave */
-    --color-border: #E9ECEF;        /* Gris claro */
-    --color-text: #343A40;          /* Gris oscuro */
-    --color-success: #28A745;       /* Verde éxito */
-    --color-error: #DC3545;         /* Rojo alerta */
+    --color-primary: #3498DB;       /* Azul claro */
+    --color-background: #FFFFFF;    /* Blanco */
+    --color-border: #BDC3C7;        /* Gris claro */
+    --color-text: #2C3E50;          /* Gris oscuro */
+    --color-highlight: #E67E22;     /* Naranja */
+    --color-success: #2ECC71;       /* Verde menta */
+    --color-error: #E74C3C;         /* Rojo suave */
 }
 
 /* Estilos generales */
@@ -17,6 +18,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .login-container, .selection-container, .form-container {
@@ -25,7 +30,6 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
-    margin: 20px auto;
     text-align: center;
 }
 
