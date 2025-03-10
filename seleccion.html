@@ -1,0 +1,129 @@
+<!-- seleccion.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Campos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="selection-container">
+        <h1>Selecciona los campos para el expediente clínico</h1>
+        <form action="expediente-clinico.html" method="get">
+            <!-- Datos de identificación -->
+            <fieldset>
+                <legend>Datos de Identificación</legend>
+                <label>
+                    <input type="checkbox" name="campo" value="nombre"> Nombre completo
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="edad"> Edad
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="sexo"> Sexo
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="domicilio"> Domicilio
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="telefono"> Teléfono
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="correo"> Correo electrónico
+                </label>
+            </fieldset>
+
+            <!-- Antecedentes -->
+            <fieldset>
+                <legend>Antecedentes</legend>
+                <label>
+                    <input type="checkbox" name="campo" value="enfermedades_previas"> Enfermedades previas
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="cirugias"> Cirugías
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="alergias"> Alergias
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="antecedentes_familiares"> Antecedentes familiares
+                </label>
+            </fieldset>
+
+            <!-- Historia clínica -->
+            <fieldset>
+                <legend>Historia Clínica</legend>
+                <label>
+                    <input type="checkbox" name="campo" value="motivo_consulta"> Motivo de consulta
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="sintomas"> Síntomas
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="exploracion_fisica"> Exploración física
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="diagnosticos"> Diagnósticos
+                </label>
+            </fieldset>
+
+            <!-- Estudios y resultados -->
+            <fieldset>
+                <legend>Estudios y Resultados</legend>
+                <label>
+                    <input type="checkbox" name="campo" value="laboratorio"> Laboratorio
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="radiografias"> Radiografías
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="tomografias"> Tomografías
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="patologia"> Patología
+                </label>
+            </fieldset>
+
+            <!-- Tratamientos -->
+            <fieldset>
+                <legend>Tratamientos</legend>
+                <label>
+                    <input type="checkbox" name="campo" value="medicamentos"> Medicamentos recetados
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="procedimientos"> Procedimientos realizados
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="evolucion"> Evolución del paciente
+                </label>
+            </fieldset>
+
+            <!-- Consentimientos informados -->
+            <fieldset>
+                <legend>Consentimientos Informados</legend>
+                <label>
+                    <input type="checkbox" name="campo" value="consentimiento_procedimiento"> Consentimiento para procedimientos
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="consentimiento_tratamiento"> Consentimiento para tratamientos
+                </label>
+            </fieldset>
+
+            <!-- Pronósticos y plan de tratamiento -->
+            <fieldset>
+                <legend>Pronósticos y Plan de Tratamiento</legend>
+                <label>
+                    <input type="checkbox" name="campo" value="pronostico"> Pronóstico
+                </label>
+                <label>
+                    <input type="checkbox" name="campo" value="recomendaciones"> Recomendaciones médicas
+                </label>
+            </fieldset>
+
+            <button type="submit">Continuar</button>
+        </form>
+    </div>
+</body>
+</html>
