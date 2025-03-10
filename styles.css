@@ -1,31 +1,36 @@
 /* style.css */
 
+/* Paleta Médica */
+:root {
+    --color-primary: #3A7BFF;       /* Azul médium */
+    --color-background: #F8F9FA;    /* Blanco suave */
+    --color-border: #E9ECEF;        /* Gris claro */
+    --color-text: #343A40;          /* Gris oscuro */
+    --color-success: #28A745;       /* Verde éxito */
+    --color-error: #DC3545;         /* Rojo alerta */
+}
+
+/* Estilos generales */
 body {
+    background-color: var(--color-background);
+    color: var(--color-text);
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .login-container, .selection-container, .form-container {
-    background-color: #fff;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    margin: 20px auto;
     text-align: center;
 }
 
-.logo {
-    width: 100px;
-    margin-bottom: 20px;
-}
-
 h1 {
+    color: var(--color-primary);
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -34,19 +39,20 @@ label {
     display: block;
     margin-bottom: 10px;
     text-align: left;
+    color: var(--color-text);
 }
 
 input[type="text"], input[type="password"], input[type="number"], select, textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     border-radius: 4px;
 }
 
 button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -54,5 +60,14 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    opacity: 0.9;
+}
+
+/* Estilos para mensajes de éxito y error */
+.success-message {
+    color: var(--color-success);
+}
+
+.error-message {
+    color: var(--color-error);
 }
