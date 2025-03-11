@@ -75,3 +75,11 @@ button:hover {
 .error-message {
     color: var(--color-error);
 }
+
+/* Estilos para el logo */
+.logo {
+    max-width: 100%; /* El logo no será más ancho que su contenedor */
+    height: auto;    /* Mantiene la proporción del logo */
+    max-height: 100px; /* Ajusta la altura máxima del logo */
+    margin-bottom: 20px; /* Espacio entre el logo y el formulario */
+}
