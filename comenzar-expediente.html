@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comenzar Expediente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="expediente-container">
+        <h1>Comenzar Expediente</h1>
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero" required>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="enfermedades-previas">Enfermedades previas:</label>
+            <textarea id="enfermedades-previas" name="enfermedades-previas"></textarea>
+
+            <label for="cirugias">Cirugías:</label>
+            <textarea id="cirugias" name="cirugias"></textarea>
+
+            <label for="alergias">Alergias:</label>
+            <input type="text" id="alergias" name="alergias">
+
+            <label for="antecedentes-familiares">Antecedentes familiares:</label>
+            <textarea id="antecedentes-familiares" name="antecedentes-familiares"></textarea>
+
+            <label for="motivo-consulta">Motivo de consulta:</label>
+            <textarea id="motivo-consulta" name="motivo-consulta" required></textarea>
+
+            <label for="sintomas">Síntomas:</label>
+            <textarea id="sintomas" name="sintomas" required></textarea>
+
+            <label for="exploracion-fisica">Exploración física:</label>
+            <textarea id="exploracion-fisica" name="exploracion-fisica" required></textarea>
+
+            <label for="diagnostico">Diagnóstico:</label>
+            <textarea id="diagnostico" name="diagnostico" required></textarea>
+
+            <label for="tratamiento">Tratamiento:</label>
+            <textarea id="tratamiento" name="tratamiento" required></textarea>
+
+            <label for="laboratorio">Resultados de laboratorio:</label>
+            <input type="text" id="laboratorio" name="laboratorio">
+
+            <label for="radiografias">Radiografías:</label>
+            <input type="text" id="radiografias" name="radiografias">
+
+            <label for="tomografias">Tomografías:</label>
+            <input type="text" id="tomografias" name="tomografias">
+
+            <label for="patologia">Patología:</label>
+            <input type="text" id="patologia" name="patologia">
+
+            <label for="consentimiento-procedimientos">Consentimiento para procedimientos:</label>
+            <select id="consentimiento-procedimientos" name="consentimiento-procedimientos" required>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="consentimiento-tratamientos">Consentimiento para tratamientos:</label>
+            <select id="consentimiento-tratamientos" name="consentimiento-tratamientos" required>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="pronostico">Pronóstico:</label>
+            <textarea id="pronostico" name="pronostico" required></textarea>
+
+            <label for="recomendaciones">Recomendaciones médicas:</label>
+            <textarea id="recomendaciones" name="recomendaciones" required></textarea>
+
+            <button type="submit">Guardar Expediente</button>
+        </form>
+        <a href="menu.html" class="btn">Volver al Menú</a>
+    </div>
+</body>
+</html>

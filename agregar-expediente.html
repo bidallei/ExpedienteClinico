@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar a Expediente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="expediente-container">
+        <h1>Agregar a Expediente</h1>
+        <div class="expediente-dummie">
+            <p><strong>Nombre:</strong> Juan Pérez</p>
+            <p><strong>Edad:</strong> 35 años</p>
+            <p><strong>Género:</strong> Masculino</p>
+            <p><strong>Domicilio:</strong> Calle Falsa 123, Ciudad</p>
+            <p><strong>Teléfono:</strong> 555-1234</p>
+            <p><strong>Correo electrónico:</strong> juan.perez@example.com</p>
+            <p><strong>Enfermedades previas:</strong> Ninguna</p>
+            <p><strong>Cirugías:</strong> Apendicectomía (2010)</p>
+            <p><strong>Alergias:</strong> Ninguna</p>
+            <p><strong>Antecedentes familiares:</strong> Hipertensión (padre)</p>
+            <p><strong>Motivo de consulta:</strong> Control de presión arterial</p>
+            <p><strong>Síntomas:</strong> Dolor de cabeza, mareos</p>
+            <p><strong>Exploración física:</strong> Presión arterial elevada</p>
+            <p><strong>Diagnóstico:</strong> Hipertensión arterial</p>
+            <p><strong>Tratamiento:</strong> Medicamentos y dieta baja en sal</p>
+            <p><strong>Resultados de laboratorio:</strong> Colesterol elevado</p>
+            <p><strong>Radiografías:</strong> Sin hallazgos relevantes</p>
+            <p><strong>Tomografías:</strong> No aplica</p>
+            <p><strong>Patología:</strong> No aplica</p>
+            <p><strong>Consentimiento para procedimientos:</strong> Sí</p>
+            <p><strong>Consentimiento para tratamientos:</strong> Sí</p>
+            <p><strong>Pronóstico:</strong> Favorable con tratamiento</p>
+            <p><strong>Recomendaciones médicas:</strong> Seguir dieta y tomar medicamentos</p>
+        </div>
+        <form action="#" method="post">
+            <label for="nuevo-diagnostico">Nuevo Diagnóstico:</label>
+            <textarea id="nuevo-diagnostico" name="nuevo-diagnostico" required></textarea>
+
+            <label for="nuevo-tratamiento">Nuevo Tratamiento:</label>
+            <textarea id="nuevo-tratamiento" name="nuevo-tratamiento" required></textarea>
+
+            <label for="nuevo-laboratorio">Nuevos Resultados de Laboratorio:</label>
+            <input type="text" id="nuevo-laboratorio" name="nuevo-laboratorio">
+
+            <label for="nuevo-radiografias">Nuevas Radiografías:</label>
+            <input type="text" id="nuevo-radiografias" name="nuevo-radiografias">
+
+            <label for="nuevo-tomografias">Nuevas Tomografías:</label>
+            <input type="text" id="nuevo-tomografias" name="nuevo-tomografias">
+
+            <label for="nuevo-patologia">Nueva Patología:</label>
+            <input type="text" id="nuevo-patologia" name="nuevo-patologia">
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+        <a href="menu.html" class="btn">Volver al Menú</a>
+    </div>
+</body>
+</html>
