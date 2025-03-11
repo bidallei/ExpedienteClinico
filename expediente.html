@@ -5,36 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisar Expediente</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="expediente-container">
         <h1>Revisar Expediente</h1>
-        <div class="expediente-dummie">
-            <p><strong>Nombre:</strong> Juan Pérez</p>
-            <p><strong>Edad:</strong> 35 años</p>
-            <p><strong>Género:</strong> Masculino</p>
-            <p><strong>Domicilio:</strong> Calle Falsa 123, Ciudad</p>
-            <p><strong>Teléfono:</strong> 555-1234</p>
-            <p><strong>Correo electrónico:</strong> juan.perez@example.com</p>
-            <p><strong>Enfermedades previas:</strong> Ninguna</p>
-            <p><strong>Cirugías:</strong> Apendicectomía (2010)</p>
-            <p><strong>Alergias:</strong> Ninguna</p>
-            <p><strong>Antecedentes familiares:</strong> Hipertensión (padre)</p>
-            <p><strong>Motivo de consulta:</strong> Control de presión arterial</p>
-            <p><strong>Síntomas:</strong> Dolor de cabeza, mareos</p>
-            <p><strong>Exploración física:</strong> Presión arterial elevada</p>
-            <p><strong>Diagnóstico:</strong> Hipertensión arterial</p>
-            <p><strong>Tratamiento:</strong> Medicamentos y dieta baja en sal</p>
-            <p><strong>Resultados de laboratorio:</strong> Colesterol elevado</p>
-            <p><strong>Radiografías:</strong> Sin hallazgos relevantes</p>
-            <p><strong>Tomografías:</strong> No aplica</p>
-            <p><strong>Patología:</strong> No aplica</p>
-            <p><strong>Consentimiento para procedimientos:</strong> Sí</p>
-            <p><strong>Consentimiento para tratamientos:</strong> Sí</p>
-            <p><strong>Pronóstico:</strong> Favorable con tratamiento</p>
-            <p><strong>Recomendaciones médicas:</strong> Seguir dieta y tomar medicamentos</p>
+
+        <!-- Dropdown con búsqueda -->
+        <label for="pacientes">Selecciona un paciente:</label>
+        <select id="pacientes" class="form-control" style="width: 100%;">
+            <option value="1">Juan Pérez</option>
+            <option value="2">María Gómez</option>
+            <option value="3">Carlos López</option>
+            <option value="4">Ana Martínez</option>
+            <option value="5">Luisa Rodríguez</option>
+        </select>
+
+        <!-- Botón para cargar el expediente -->
+        <button id="cargar-expediente" class="btn">Cargar Expediente</button>
+
+        <!-- Contenedor para mostrar los datos del expediente -->
+        <div id="expediente-dummie" class="expediente-dummie" style="display: none;">
+            <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+            <p><strong>Edad:</strong> <span id="edad"></span></p>
+            <p><strong>Género:</strong> <span id="genero"></span></p>
+            <p><strong>Domicilio:</strong> <span id="domicilio"></span></p>
+            <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+            <p><strong>Correo electrónico:</strong> <span id="correo"></span></p>
+            <p><strong>Enfermedades previas:</strong> <span id="enfermedades_previas"></span></p>
+            <p><strong>Cirugías:</strong> <span id="cirugias"></span></p>
+            <p><strong>Alergias:</strong> <span id="alergias"></span></p>
+            <p><strong>Antecedentes familiares:</strong> <span id="antecedentes_familiares"></span></p>
+            <p><strong>Motivo de consulta:</strong> <span id="motivo_consulta"></span></p>
+            <p><strong>Síntomas:</strong> <span id="sintomas"></span></p>
+            <p><strong>Exploración física:</strong> <span id="exploracion_fisica"></span></p>
+            <p><strong>Diagnóstico:</strong> <span id="diagnostico"></span></p>
+            <p><strong>Tratamiento:</strong> <span id="tratamiento"></span></p>
+            <p><strong>Resultados de laboratorio:</strong> <span id="resultados_laboratorio"></span></p>
+            <p><strong>Radiografías:</strong> <span id="radiografias"></span></p>
+            <p><strong>Tomografías:</strong> <span id="tomografias"></span></p>
+            <p><strong>Patología:</strong> <span id="patologia"></span></p>
+            <p><strong>Consentimiento para procedimientos:</strong> <span id="consentimiento_procedimientos"></span></p>
+            <p><strong>Consentimiento para tratamientos:</strong> <span id="consentimiento_tratamientos"></span></p>
+            <p><strong>Pronóstico:</strong> <span id="pronostico"></span></p>
+            <p><strong>Recomendaciones médicas:</strong> <span id="recomendaciones_medicas"></span></p>
         </div>
+
         <a href="menu.html" class="btn">Volver al Menú</a>
     </div>
+
+    <!-- jQuery (requerido por Select2) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Script para inicializar Select2 y manejar la selección -->
+    <script>
+        $(document).ready(function() {
+            // Inicializar Select2 en el dropdown
+            $('#pacientes').select2();
+
+            // Datos dummies de los pacientes
+            const pacientes = {
+        1: { 
+            nombre: "Juan Pérez", edad: "35 años", genero: "Masculino", 
+            domicilio: "Calle Falsa 123, Ciudad", telefono: "555-1234", 
+            correo: "juan.perez@example.com", enfermedades_previas: "Ninguna", 
+            cirugias: "Apendicectomía (2010)", alergias: "Ninguna", 
+            antecedentes_familiares: "Hipertensión (padre)", 
+            motivo_consulta: "Control de presión arterial", sintomas: "Dolor de cabeza, mareos", 
+            exploracion_fisica: "Presión arterial elevada", diagnostico: "Hipertensión arterial", 
+            tratamiento: "Medicamentos y dieta baja en sal", 
+            resultados_laboratorio: "Colesterol elevado", radiografias: "Sin hallazgos relevantes", 
+            tomografias: "No aplica", patologia: "No aplica", 
+            consentimiento_procedimientos: "Sí", consentimiento_tratamientos: "Sí", 
+            pronostico: "Favorable con tratamiento", recomendaciones_medicas: "Seguir dieta y tomar medicamentos"
+        },
+        2: { 
+            nombre: "María Gómez", edad: "28 años", genero: "Femenino", 
+            domicilio: "Avenida Central 456, Ciudad", telefono: "555-5678", 
+            correo: "maria.gomez@example.com", enfermedades_previas: "Diabetes tipo 2", 
+            cirugias: "No aplica", alergias: "Penicilina", 
+            antecedentes_familiares: "Diabetes (madre)", 
+            motivo_consulta: "Control de diabetes", sintomas: "Fatiga, sed excesiva", 
+            exploracion_fisica: "Glucosa elevada", diagnostico: "Diabetes tipo 2", 
+            tratamiento: "Insulina y dieta balanceada", 
+            resultados_laboratorio: "Glucosa en sangre elevada", radiografias: "No aplica", 
+            tomografias: "No aplica", patologia: "No aplica", 
+            consentimiento_procedimientos: "Sí", consentimiento_tratamientos: "Sí", 
+            pronostico: "Controlable con tratamiento", recomendaciones_medicas: "Seguir dieta y tratamiento" 
+        },
+        3: { 
+            nombre: "Carlos López", edad: "42 años", genero: "Masculino", 
+            domicilio: "Calle Norte 789, Ciudad", telefono: "555-9876", 
+            correo: "carlos.lopez@example.com", enfermedades_previas: "Artritis reumatoide", 
+            cirugias: "Cirugía en rodilla (2015)", alergias: "Ninguna", 
+            antecedentes_familiares: "Artritis (abuelo)", 
+            motivo_consulta: "Dolor articular", sintomas: "Dolor en articulaciones, rigidez", 
+            exploracion_fisica: "Inflamación en manos y rodillas", diagnostico: "Artritis reumatoide", 
+            tratamiento: "Antiinflamatorios y fisioterapia", 
+            resultados_laboratorio: "Factor reumatoide positivo", radiografias: "Desgaste articular", 
+            tomografias: "No aplica", patologia: "No aplica", 
+            consentimiento_procedimientos: "Sí", consentimiento_tratamientos: "Sí", 
+            pronostico: "Mejorable con tratamiento", recomendaciones_medicas: "Fisioterapia y medicación" 
+        },
+        4: { 
+            nombre: "Ana Martínez", edad: "30 años", genero: "Femenino", 
+            domicilio: "Boulevard Sur 321, Ciudad", telefono: "555-3333", 
+            correo: "ana.martinez@example.com", enfermedades_previas: "Asma", 
+            cirugias: "Amigdalectomía (2005)", alergias: "Polen", 
+            antecedentes_familiares: "Asma (hermano)", 
+            motivo_consulta: "Dificultad para respirar", sintomas: "Opresión en el pecho, tos", 
+            exploracion_fisica: "Sibilancias en pulmones", diagnostico: "Crisis asmática", 
+            tratamiento: "Broncodilatadores e inhalador", 
+            resultados_laboratorio: "Oxigenación disminuida", radiografias: "Sin hallazgos relevantes", 
+            tomografias: "No aplica", patologia: "No aplica", 
+            consentimiento_procedimientos: "Sí", consentimiento_tratamientos: "Sí", 
+            pronostico: "Bueno con tratamiento", recomendaciones_medicas: "Evitar alérgenos y seguir tratamiento" 
+        },
+        5: { 
+            nombre: "Luis Ramírez", edad: "50 años", genero: "Masculino", 
+            domicilio: "Calle Oriente 654, Ciudad", telefono: "555-7777", 
+            correo: "luis.ramirez@example.com", enfermedades_previas: "Hipotiroidismo", 
+            cirugias: "No aplica", alergias: "Mariscos", 
+            antecedentes_familiares: "Tiroides (madre)", 
+            motivo_consulta: "Cansancio y aumento de peso", sintomas: "Fatiga, piel seca", 
+            exploracion_fisica: "Bocio leve", diagnostico: "Hipotiroidismo", 
+            tratamiento: "Levotiroxina diaria", 
+            resultados_laboratorio: "TSH elevada", radiografias: "No aplica", 
+            tomografias: "No aplica", patologia: "No aplica", 
+            consentimiento_procedimientos: "Sí", consentimiento_tratamientos: "Sí", 
+            pronostico: "Bueno con medicación", recomendaciones_medicas: "Control endocrinológico y dieta balanceada" 
+        }
+    };
+
+            // Manejar la selección de un paciente
+            $('#cargar-expediente').click(function() {
+                const idPaciente = $('#pacientes').val(); // Obtener el ID del paciente seleccionado
+                const paciente = pacientes[idPaciente];   // Obtener los datos del paciente
+
+                // Mostrar los datos del paciente
+                $('#nombre').text(paciente.nombre);
+                $('#edad').text(paciente.edad);
+                $('#genero').text(paciente.genero);
+                $('#diagnostico').text(paciente.diagnostico);
+                $('#tratamiento').text(paciente.tratamiento);
+                $('#alergias').text(paciente.alergias);
+
+                // Mostrar el contenedor de datos
+                $('#expediente-dummie').show();
+            });
+        });
+    </script>
 </body>
 </html>

@@ -122,3 +122,35 @@ button:hover {
 .btn:hover {
     text-decoration: underline;
 }
+
+/* Estilos para el dropdown */
+.select2-container {
+    width: 100% !important; /* Asegura que el dropdown ocupe todo el ancho */
+    margin-bottom: 10px;    /* Espacio entre el dropdown y el botón */
+}
+
+/* Estilos para el contenedor de datos del expediente */
+.expediente-dummie {
+    text-align: left;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilos para el botón de cargar expediente */
+#cargar-expediente {
+    background-color: #5c7457;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#cargar-expediente:hover {
+    opacity: 0.9;
+}
